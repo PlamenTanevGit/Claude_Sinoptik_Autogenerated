@@ -1,0 +1,148 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # Run tests daily at 6 AM UTC (useful for weather site testing)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    # Allow manual triggering
+    inputs:
+      test_file:
+        description: 'Specific test file to run (optional)'
+        required: false
+        default: ''
+      browser:
+        description: 'Browser to test'
+        required: false
+        default: 'chromium'
+        type: choice
+        options:
+        - chromium
+        - firefox
+        - webkit
+        - all
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Define browser matrix based on input or default to chromium
+        browser: ${{ github.event.inputs.browser == 'all' && fromJson('["chromium", "firefox", "webkit"]') || fromJson(format('["{0}"]', github.event.inputs.browser || 'chromium')) }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps ${{ matrix.browser }}
+
+    - name: Run Playwright tests
+      run: |
+        if [ -n "${{ github.event.inputs.test_file }}" ]; then
+          npx playwright test ${{ github.event.inputs.test_file }} --project=${{ matrix.browser }}
+        else
+          npx playwright test --project=${{ matrix.browser }}
+        fi
+      env:
+        # Set CI environment variable for your config
+        CI: true
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report-${{ matrix.browser }}
+        path: |
+          playwright-report/
+          test-results/
+          *.png
+        retention-days: 30
+
+    - name: Upload trace files
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: playwright-traces-${{ matrix.browser }}
+        path: test-results/*/trace.zip
+        retention-days: 30
+
+  # Merge reports from different browsers
+  merge-reports:
+    if: always()
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: all-reports
+
+    - name: Merge HTML reports
+      run: |
+        npx playwright merge-reports --reporter=html ./all-reports/playwright-report-*
+      continue-on-error: true
+
+    - name: Upload merged report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: merged-playwright-report
+        path: playwright-report/
+        retention-days: 30
+
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' && always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./playwright-report
+        destination_dir: test-reports
+
+  # Notification job
+  notify:
+    if: always()
+    needs: [test, merge-reports]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify on failure
+      if: needs.test.result == 'failure'
+      run: |
+        echo "::error::Playwright tests failed! Check the test results for details."
+        
+    - name: Test Summary
+      if: always()
+      run: |
+        echo "## 🎭 Playwright Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Test Status:** ${{ needs.test.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Reports:** Available in artifacts" >> $GITHUB_STEP_SUMMARY
+        if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+          echo "**HTML Report:** https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test-reports/" >> $GITHUB_STEP_SUMMARY
+        fi

@@ -1,0 +1,480 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Прогноза за времето в България и по света от Sinoptik.bg":
+    - /url: https://www.sinoptik.bg/
+  - textbox "Търси град"
+  - button
+  - link "EN":
+    - /url: https://weather.sinoptik.bg/varna-bulgaria-100726050/14-days
+  - link "°C":
+    - /url: javascript:;
+  - link "°F":
+    - /url: javascript:;
+- navigation:
+  - list:
+    - listitem:
+      - link "Начало":
+        - /url: https://www.sinoptik.bg/
+    - listitem:
+      - link "България":
+        - /url: https://www.sinoptik.bg/locations/europe/bulgaria
+    - listitem:
+      - link "Европа":
+        - /url: https://www.sinoptik.bg/locations/europe
+    - listitem:
+      - link "Свят":
+        - /url: https://www.sinoptik.bg/locations
+    - listitem:
+      - link "Курорти":
+        - /url: https://www.sinoptik.bg/resorts
+    - listitem:
+      - link "Фаза на луната":
+        - /url: https://www.sinoptik.bg/moon-phase
+    - listitem:
+      - link "Карта":
+        - /url: https://www.sinoptik.bg/map
+    - listitem:
+      - link "За времето":
+        - /url: https://www.sinoptik.bg/news
+    - listitem:
+      - link "Видео":
+        - /url: https://www.sinoptik.bg/video
+- text: Реклама
+- iframe
+- heading [level=1]
+- link "Европа":
+  - /url: https://www.sinoptik.bg/locations/europe
+- text: ","
+- link "България":
+  - /url: https://www.sinoptik.bg/locations/europe/bulgaria
+- heading "Варна" [level=1]
+- link "Добави в моите градове":
+  - /url: "#"
+  - img
+  - text: Добави в моите градове
+- link "Отваряй по подразбиране":
+  - /url: "#"
+  - img
+  - text: Отваряй по подразбиране
+- list:
+  - listitem:
+    - link "В момента":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050
+  - listitem:
+    - link "По часове":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/hourly
+  - listitem:
+    - link "Уикенд":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/weekend
+  - listitem:
+    - link "5-дневна":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/5-days
+  - listitem:
+    - link "14-дневна":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days
+- text: "Прогноза: Максимална: Минимална: Вятър: Вероятност за валежи: Количество валежи: Вероятност за буря: Облачност: UV индекс: Изгрев: Залез: Продължителност на деня: Фаза на луната: Зодиакален знак: Осветеност: Позиция в лунен цикъл:"
+- link "Вт. 19 август Облачно, дъжд с гръмотевици 26° 19° 2 m/s 42% 7.06 mm 0% 91% 3 06:17 ч. 20:05 ч. 13:48 ч. Намаляващ полумесец Рак 17% 0.86":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/1
+  - text: Вт. 19 август
+  - img "Облачно, дъжд с гръмотевици"
+  - text: 26° 19° 2 m/s 42% 7.06 mm 0% 91% 3 06:17 ч. 20:05 ч. 13:48 ч.
+  - img "Намаляващ полумесец"
+  - text: Рак 17% 0.86
+- link "Ср. 20 август Облачно, слаб дъжд 27° 19° 2 m/s 18% 0.65 mm 0% 34% 6 06:18 ч. 20:04 ч. 13:45 ч. Намаляващ полумесец Рак 10% 0.9":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/2
+  - text: Ср. 20 август
+  - img "Облачно, слаб дъжд"
+  - text: 27° 19° 2 m/s 18% 0.65 mm 0% 34% 6 06:18 ч. 20:04 ч. 13:45 ч.
+  - img "Намаляващ полумесец"
+  - text: Рак 10% 0.9
+- link "Чт. 21 август Слънчево 30° 19° 3 m/s 2% 0 mm 0% 0% 6 06:19 ч. 20:02 ч. 13:42 ч. Намаляващ полумесец Лъв 4% 0.94":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/3
+  - text: Чт. 21 август
+  - img "Слънчево"
+  - text: 30° 19° 3 m/s 2% 0 mm 0% 0% 6 06:19 ч. 20:02 ч. 13:42 ч.
+  - img "Намаляващ полумесец"
+  - text: Лъв 4% 0.94
+- link "Пт. 22 август Предимно слънчево 29° 23° 3 m/s 2% 0.04 mm 0% 17% 6 06:20 ч. 20:01 ч. 13:40 ч. Намаляващ полумесец Лъв 1% 0.97":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/4
+  - text: Пт. 22 август
+  - img "Предимно слънчево"
+  - text: 29° 23° 3 m/s 2% 0.04 mm 0% 17% 6 06:20 ч. 20:01 ч. 13:40 ч.
+  - img "Намаляващ полумесец"
+  - text: Лъв 1% 0.97
+- link "Сб. 23 август Облачно, слаб дъжд 28° 21° 3 m/s 33% 0.15 mm 0% 17% 6 06:21 ч. 19:59 ч. 13:37 ч. Новолуние Дева 0% 0":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/5
+  - text: Сб. 23 август
+  - img "Облачно, слаб дъжд"
+  - text: 28° 21° 3 m/s 33% 0.15 mm 0% 17% 6 06:21 ч. 19:59 ч. 13:37 ч.
+  - img "Новолуние"
+  - text: Дева 0% 0
+- link "Нд. 24 август Предимно слънчево 28° 19° 3 m/s 39% 0.35 mm 0% 17% 6 06:23 ч. 19:57 ч. 13:34 ч. Нарастващ полумесец Дева 1% 0.04":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/6
+  - text: Нд. 24 август
+  - img "Предимно слънчево"
+  - text: 28° 19° 3 m/s 39% 0.35 mm 0% 17% 6 06:23 ч. 19:57 ч. 13:34 ч.
+  - img "Нарастващ полумесец"
+  - text: Дева 1% 0.04
+- link "Пн. 25 август Предимно слънчево 26° 19° 4 m/s 60% 0.43 mm 0% 28% 4 06:24 ч. 19:56 ч. 13:32 ч. Нарастващ полумесец Дева 5% 0.07":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/7
+  - text: Пн. 25 август
+  - img "Предимно слънчево"
+  - text: 26° 19° 4 m/s 60% 0.43 mm 0% 28% 4 06:24 ч. 19:56 ч. 13:32 ч.
+  - img "Нарастващ полумесец"
+  - text: Дева 5% 0.07
+- link "Вт. 26 август Предимно слънчево 27° 19° 3 m/s 20% 0 mm 0% 23% 4 06:25 ч. 19:54 ч. 13:29 ч. Нарастващ полумесец Везни 10% 0.1":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/8
+  - text: Вт. 26 август
+  - img "Предимно слънчево"
+  - text: 27° 19° 3 m/s 20% 0 mm 0% 23% 4 06:25 ч. 19:54 ч. 13:29 ч.
+  - img "Нарастващ полумесец"
+  - text: Везни 10% 0.1
+- link "Ср. 27 август Слънчево 29° 21° 3 m/s 13% 0 mm 0% 8% 6 06:26 ч. 19:52 ч. 13:26 ч. Нарастващ полумесец Везни 16% 0.13":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/9
+  - text: Ср. 27 август
+  - img "Слънчево"
+  - text: 29° 21° 3 m/s 13% 0 mm 0% 8% 6 06:26 ч. 19:52 ч. 13:26 ч.
+  - img "Нарастващ полумесец"
+  - text: Везни 16% 0.13
+- link "Чт. 28 август Променлива облачност 26° 20° 3 m/s 18% 0.14 mm 0% 38% 6 06:27 ч. 19:51 ч. 13:23 ч. Нарастващ полумесец Скорпион 24% 0.16":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/10
+  - text: Чт. 28 август
+  - img "Променлива облачност"
+  - text: 26° 20° 3 m/s 18% 0.14 mm 0% 38% 6 06:27 ч. 19:51 ч. 13:23 ч.
+  - img "Нарастващ полумесец"
+  - text: Скорпион 24% 0.16
+- link "Пт. 29 август Облачно, кратък дъжд 29° 20° 5 m/s 9% 1.04 mm 0% 33% - 06:28 ч. 19:49 ч. 13:20 ч. Нарастващ полумесец Скорпион 33% 0.19":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/11
+  - text: Пт. 29 август
+  - img "Облачно, кратък дъжд"
+  - text: 29° 20° 5 m/s 9% 1.04 mm 0% 33% - 06:28 ч. 19:49 ч. 13:20 ч.
+  - img "Нарастващ полумесец"
+  - text: Скорпион 33% 0.19
+- link "Сб. 30 август Предимно слънчево 29° 20° 4 m/s 11% 0.32 mm 0% 32% - 06:29 ч. 19:47 ч. 13:18 ч. Нарастващ полумесец Скорпион 42% 0.22":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/12
+  - text: Сб. 30 август
+  - img "Предимно слънчево"
+  - text: 29° 20° 4 m/s 11% 0.32 mm 0% 32% - 06:29 ч. 19:47 ч. 13:18 ч.
+  - img "Нарастващ полумесец"
+  - text: Скорпион 42% 0.22
+- link "Нд. 31 август Слънчево 29° 19° 5 m/s 6% 0 mm 0% 1% - 06:30 ч. 19:46 ч. 13:15 ч. Първа четвърт Стрелец 51% 0.25":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/13
+  - text: Нд. 31 август
+  - img "Слънчево"
+  - text: 29° 19° 5 m/s 6% 0 mm 0% 1% - 06:30 ч. 19:46 ч. 13:15 ч.
+  - img "Първа четвърт"
+  - text: Стрелец 51% 0.25
+- link "Пн. 1 септември Слънчево 30° 20° 5 m/s 5% 0 mm 0% 2% - 06:31 ч. 19:44 ч. 13:12 ч. Нарастваща полупълна Стрелец 61% 0.28":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/14
+  - text: Пн. 1 септември
+  - img "Слънчево"
+  - text: 30° 20° 5 m/s 5% 0 mm 0% 2% - 06:31 ч. 19:44 ч. 13:12 ч.
+  - img "Нарастваща полупълна"
+  - text: Стрелец 61% 0.28
+- img
+- list:
+  - listitem:
+    - link "Вт.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/1
+    - text: "19.08"
+  - listitem:
+    - link "Ср.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/2
+    - text: "20.08"
+  - listitem:
+    - link "Чт.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/3
+    - text: "21.08"
+  - listitem:
+    - link "Пт.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/4
+    - text: "22.08"
+  - listitem:
+    - link "Сб.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/5
+    - text: "23.08"
+  - listitem:
+    - link "Нд.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/6
+    - text: "24.08"
+  - listitem:
+    - link "Пн.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/7
+    - text: "25.08"
+  - listitem:
+    - link "Вт.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/8
+    - text: "26.08"
+  - listitem:
+    - link "Ср.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/9
+    - text: "27.08"
+  - listitem:
+    - link "Чт.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/10
+    - text: "28.08"
+  - listitem:
+    - link "Пт.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/11
+    - text: "29.08"
+  - listitem:
+    - link "Сб.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/12
+    - text: "30.08"
+  - listitem:
+    - link "Нд.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/13
+    - text: "31.08"
+  - listitem:
+    - link "Пн.":
+      - /url: https://www.sinoptik.bg/varna-bulgaria-100726050/14-days/14
+    - text: "01.09"
+- link "Покажи детайли":
+  - /url: "#"
+- iframe
+- heading "За времето Виж всички" [level=2]:
+  - link "За времето":
+    - /url: /news
+  - link "Виж всички":
+    - /url: /news
+- link "Над 1400 щъркели в Тополовград":
+  - /url: https://www.sinoptik.bg/news/nad-1400-shtyrkeli-v-topolovgrad-11581
+  - img "Над 1400 щъркели в Тополовград"
+- heading "Над 1400 щъркели в Тополовград" [level=3]:
+  - link "Над 1400 щъркели в Тополовград":
+    - /url: https://www.sinoptik.bg/news/nad-1400-shtyrkeli-v-topolovgrad-11581
+- time: преди 12 часа
+- link "Очарованието на розовите пирамиди в Кърджалийско":
+  - /url: https://www.sinoptik.bg/news/ocharovanieto-na-rozovite-piramidi-v-kyrdzhalijsko-11580
+  - img "Очарованието на розовите пирамиди в Кърджалийско"
+- heading "Очарованието на розовите пирамиди в Кърджалийско" [level=3]:
+  - link "Очарованието на розовите пирамиди в Кърджалийско":
+    - /url: https://www.sinoptik.bg/news/ocharovanieto-na-rozovite-piramidi-v-kyrdzhalijsko-11580
+- time: преди 12 часа
+- link "Възстановяват чешми по Деветашкото плато":
+  - /url: https://www.sinoptik.bg/news/vyzstanoviavat-cheshmi-po-devetashkoto-plato-11579
+  - img "Възстановяват чешми по Деветашкото плато"
+- heading "Възстановяват чешми по Деветашкото плато" [level=3]:
+  - link "Възстановяват чешми по Деветашкото плато":
+    - /url: https://www.sinoptik.bg/news/vyzstanoviavat-cheshmi-po-devetashkoto-plato-11579
+- time: преди 12 часа
+- link "170 нефтени петна в българската част на Черно море":
+  - /url: https://www.sinoptik.bg/news/170-nefteni-petna-v-bylgarskata-chast-na-cherno-more-11578
+  - img "170 нефтени петна в българската част на Черно море"
+- heading "170 нефтени петна в българската част на Черно море" [level=3]:
+  - link "170 нефтени петна в българската част на Черно море":
+    - /url: https://www.sinoptik.bg/news/170-nefteni-petna-v-bylgarskata-chast-na-cherno-more-11578
+- time: преди 12 часа
+- link "Фестивал на хвърчилата по Черноморието":
+  - /url: https://www.sinoptik.bg/news/festival-na-hvyrchilata-po-chernomorieto-11577
+  - img "Фестивал на хвърчилата по Черноморието"
+- heading "Фестивал на хвърчилата по Черноморието" [level=3]:
+  - link "Фестивал на хвърчилата по Черноморието":
+    - /url: https://www.sinoptik.bg/news/festival-na-hvyrchilata-po-chernomorieto-11577
+- time: вчера
+- link:
+  - /url: https://b.grabo.bg/click.php?it=1755635445&affid=20493&affid2=5&banner_id=458&url=https%3A%2F%2Fgrabo.bg%2F04wsnfn%3Faffid%3D20493%26affid2%3D5%26utm_source%3Dbanner
+- heading "Маникюр с гел лак - Център за красота Божествена" [level=3]:
+  - link "Маникюр с гел лак - Център за красота Божествена":
+    - /url: https://b.grabo.bg/click.php?it=1755635445&affid=20493&affid2=5&banner_id=458&url=https%3A%2F%2Fgrabo.bg%2F04wsnfn%3Faffid%3D20493%26affid2%3D5%26utm_source%3Dbanner
+- time: "Цена: 18.00 лв 35.00 лв 9.20 € 17.90 €"
+- time: Grabo.bg
+- iframe
+- iframe
+- iframe
+- heading "Снимка на деня Виж всички" [level=2]:
+  - link "Снимка на деня":
+    - /url: https://www.sinoptik.bg/photo/krasivo-tvorenie-na-prirodata-1840
+  - link "Виж всички":
+    - /url: https://www.sinoptik.bg/photo/krasivo-tvorenie-na-prirodata-1840
+- link "Kрасиво творение на природата":
+  - /url: https://www.sinoptik.bg/photo/krasivo-tvorenie-na-prirodata-1840?view=full
+  - img "Kрасиво творение на природата"
+- paragraph: Водопадът „Докузак“
+- text: "Снимка: Маруся Додова"
+- link "Изпрати снимка":
+  - /url: https://sinoptik.bg/photo/upload
+- link:
+  - /url: https://www.facebook.com/sharer/sharer.php?u=https://www.sinoptik.bg/photo/krasivo-tvorenie-na-prirodata-1840
+- iframe
+- 'link "Край на заплетените кабели: 8в1 решение за тревата и живия плет"':
+  - /url: https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsv4cR0QF4_5idIK54fLevi3jLL5vaOHc1IMDFtOPJFboNru5U5J9qTJPxpU5QlUg0mIiaLrPSZWGS_1iSF5Vw3pD22QVQqipnUJ0u0var8tOW8W2bS2h3N3x-d8s_2pN-paY06hoqJ-NEOK8HiaOmKgGB-JRzp5XVUbGDPxQ_q5i3Y4RrpbCrqlfSMwC2TOtorRloNe69wOww4MRHYtVPN5PKCCLLjuBaoNsr3_yGCYbApWlmIdhQLUTHR9S8sfASzTfhRlS7_anedERtTOc6x82dJwyIrtH6HNnP5fJkNud90jrvWcUaBwtgUHnPkGy5PN85hMv1gUo1EKgrVlui9mYU8O6UbVTF49T5J664DGXeW5GqS-nG3WhYIiqAlk1IerW1_dE9rwmj2-XxrRZ6tRZqHBQkw8ugYQ2_FQDNPfQA%2526sai%253DAMfl-YSN37xoDLBoF6pTMz2azV6DkJhXovrOj9nd2jRtBHJiZWj-FIGQK720bHLeoprD8WnudTK4DGmaLGoYg6ETnRe6qdLYZuWHU8SdIVythat-XAySsu10NfsP3SkoJ3k%2526sig%253DCg0ArKJSzM8oDmdCzkQsEAE%2526fbs_aeid%253D%25255Bgw_fbsaeid%25255D%2526urlfix%253D1%2526adurl%253Dhttps://tvboutique.bg/fast-mower-by-rotorazer-moshtna-akumulatorna-kosachka-8-v-1?utm_source=inhouse&utm_medium=native&utm_campaign=rotorazer-2025
+  - 'img "Край на заплетените кабели: 8в1 решение за тревата и живия плет"'
+- link:
+  - /url: https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsv4cR0QF4_5idIK54fLevi3jLL5vaOHc1IMDFtOPJFboNru5U5J9qTJPxpU5QlUg0mIiaLrPSZWGS_1iSF5Vw3pD22QVQqipnUJ0u0var8tOW8W2bS2h3N3x-d8s_2pN-paY06hoqJ-NEOK8HiaOmKgGB-JRzp5XVUbGDPxQ_q5i3Y4RrpbCrqlfSMwC2TOtorRloNe69wOww4MRHYtVPN5PKCCLLjuBaoNsr3_yGCYbApWlmIdhQLUTHR9S8sfASzTfhRlS7_anedERtTOc6x82dJwyIrtH6HNnP5fJkNud90jrvWcUaBwtgUHnPkGy5PN85hMv1gUo1EKgrVlui9mYU8O6UbVTF49T5J664DGXeW5GqS-nG3WhYIiqAlk1IerW1_dE9rwmj2-XxrRZ6tRZqHBQkw8ugYQ2_FQDNPfQA%2526sai%253DAMfl-YSN37xoDLBoF6pTMz2azV6DkJhXovrOj9nd2jRtBHJiZWj-FIGQK720bHLeoprD8WnudTK4DGmaLGoYg6ETnRe6qdLYZuWHU8SdIVythat-XAySsu10NfsP3SkoJ3k%2526sig%253DCg0ArKJSzM8oDmdCzkQsEAE%2526fbs_aeid%253D%25255Bgw_fbsaeid%25255D%2526urlfix%253D1%2526adurl%253Dhttps://tvboutique.bg/fast-mower-by-rotorazer-moshtna-akumulatorna-kosachka-8-v-1?utm_source=inhouse&utm_medium=native&utm_campaign=rotorazer-2025
+- 'heading "Край на заплетените кабели: 8в1 решение за тревата и живия плет" [level=3]':
+  - link:
+    - /url: https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsv4cR0QF4_5idIK54fLevi3jLL5vaOHc1IMDFtOPJFboNru5U5J9qTJPxpU5QlUg0mIiaLrPSZWGS_1iSF5Vw3pD22QVQqipnUJ0u0var8tOW8W2bS2h3N3x-d8s_2pN-paY06hoqJ-NEOK8HiaOmKgGB-JRzp5XVUbGDPxQ_q5i3Y4RrpbCrqlfSMwC2TOtorRloNe69wOww4MRHYtVPN5PKCCLLjuBaoNsr3_yGCYbApWlmIdhQLUTHR9S8sfASzTfhRlS7_anedERtTOc6x82dJwyIrtH6HNnP5fJkNud90jrvWcUaBwtgUHnPkGy5PN85hMv1gUo1EKgrVlui9mYU8O6UbVTF49T5J664DGXeW5GqS-nG3WhYIiqAlk1IerW1_dE9rwmj2-XxrRZ6tRZqHBQkw8ugYQ2_FQDNPfQA%2526sai%253DAMfl-YSN37xoDLBoF6pTMz2azV6DkJhXovrOj9nd2jRtBHJiZWj-FIGQK720bHLeoprD8WnudTK4DGmaLGoYg6ETnRe6qdLYZuWHU8SdIVythat-XAySsu10NfsP3SkoJ3k%2526sig%253DCg0ArKJSzM8oDmdCzkQsEAE%2526fbs_aeid%253D%25255Bgw_fbsaeid%25255D%2526urlfix%253D1%2526adurl%253Dhttps://tvboutique.bg/fast-mower-by-rotorazer-moshtna-akumulatorna-kosachka-8-v-1?utm_source=inhouse&utm_medium=native&utm_campaign=rotorazer-2025
+  - 'link "Край на заплетените кабели: 8в1 решение за тревата и живия плет"':
+    - /url: https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsv4cR0QF4_5idIK54fLevi3jLL5vaOHc1IMDFtOPJFboNru5U5J9qTJPxpU5QlUg0mIiaLrPSZWGS_1iSF5Vw3pD22QVQqipnUJ0u0var8tOW8W2bS2h3N3x-d8s_2pN-paY06hoqJ-NEOK8HiaOmKgGB-JRzp5XVUbGDPxQ_q5i3Y4RrpbCrqlfSMwC2TOtorRloNe69wOww4MRHYtVPN5PKCCLLjuBaoNsr3_yGCYbApWlmIdhQLUTHR9S8sfASzTfhRlS7_anedERtTOc6x82dJwyIrtH6HNnP5fJkNud90jrvWcUaBwtgUHnPkGy5PN85hMv1gUo1EKgrVlui9mYU8O6UbVTF49T5J664DGXeW5GqS-nG3WhYIiqAlk1IerW1_dE9rwmj2-XxrRZ6tRZqHBQkw8ugYQ2_FQDNPfQA%2526sai%253DAMfl-YSN37xoDLBoF6pTMz2azV6DkJhXovrOj9nd2jRtBHJiZWj-FIGQK720bHLeoprD8WnudTK4DGmaLGoYg6ETnRe6qdLYZuWHU8SdIVythat-XAySsu10NfsP3SkoJ3k%2526sig%253DCg0ArKJSzM8oDmdCzkQsEAE%2526fbs_aeid%253D%25255Bgw_fbsaeid%25255D%2526urlfix%253D1%2526adurl%253Dhttps://tvboutique.bg/fast-mower-by-rotorazer-moshtna-akumulatorna-kosachka-8-v-1?utm_source=inhouse&utm_medium=native&utm_campaign=rotorazer-2025
+- text: Tvboutique.bg
+- heading "Видео" [level=2]:
+  - link "Видео":
+    - /url: https://www.sinoptik.bg/video
+- link "Прогноза за времето (19.08.2025 - следобедна емисия)":
+  - /url: https://www.sinoptik.bg/video/prognoza-za-vremeto-19.08.2025-sledobedna-emisiia-172828
+  - img "Прогноза за времето (19.08.2025 - следобедна емисия)"
+  - img
+- heading "Прогноза за времето (19.08.2025 - следобедна емисия)" [level=3]:
+  - link "Прогноза за времето (19.08.2025 - следобедна емисия)":
+    - /url: https://www.sinoptik.bg/video/prognoza-za-vremeto-19.08.2025-sledobedna-emisiia-172828
+- iframe
+- heading "Курорти Виж всички" [level=2]:
+  - link "Курорти":
+    - /url: https://www.sinoptik.bg/resorts
+  - link "Виж всички":
+    - /url: https://www.sinoptik.bg/resorts
+- link "Варна 19° | 26° Облачно, дъжд с гръмотевици":
+  - /url: https://www.sinoptik.bg/varna-bulgaria-100726050
+  - text: Варна 19° | 26°
+  - img "Облачно, дъжд с гръмотевици"
+- link "Бургас 19° | 24° Предимно облачно, дъжд с гръмотевици":
+  - /url: https://www.sinoptik.bg/burgas-bulgaria-100732770
+  - text: Бургас 19° | 24°
+  - img "Предимно облачно, дъжд с гръмотевици"
+- link "Ахтопол 21° | 25° Предимно облачно, дъжд с гръмотевици":
+  - /url: https://www.sinoptik.bg/akhtopol-bulgaria-100733722
+  - text: Ахтопол 21° | 25°
+  - img "Предимно облачно, дъжд с гръмотевици"
+- link "Златни пясъци 21° | 27° Облачно с дъжд":
+  - /url: https://www.sinoptik.bg/golden-sands-bulgaria-106355004
+  - text: Златни пясъци 21° | 27°
+  - img "Облачно с дъжд"
+- link "Слънчев бряг 19° | 25° Предимно облачно, дъжд с гръмотевици":
+  - /url: https://www.sinoptik.bg/sunny-beach-bulgaria-106355005
+  - text: Слънчев бряг 19° | 25°
+  - img "Предимно облачно, дъжд с гръмотевици"
+- iframe
+- heading "Фаза на Луната" [level=3]
+- paragraph: Днес, Вторник 19 август
+- paragraph: Намаляващ полумесец
+- paragraph: 17% / 0.86 Рак
+- link "Виж всички фази":
+  - /url: https://www.sinoptik.bg/moon-phase
+- heading "DogsAndCats.bg Виж всички" [level=2]:
+  - link "DogsAndCats.bg":
+    - /url: https://dogsandcats.bg
+  - link "Виж всички":
+    - /url: https://dogsandcats.bg
+- link:
+  - /url: https://dogsandcats.bg/kucheta/hipoalergenni-kucheta-najdobrite-porodi-koito-ne-lineiat
+  - img
+- 'heading "Хипоалергенни кучета: Най-добрите породи, които не линеят" [level=3]':
+  - 'link "Хипоалергенни кучета: Най-добрите породи, които не линеят"':
+    - /url: https://dogsandcats.bg/kucheta/hipoalergenni-kucheta-najdobrite-porodi-koito-ne-lineiat
+- link:
+  - /url: https://dogsandcats.bg/kotki/mogat-li-kotkite-da-bydat-sinoptici
+  - img
+- heading "Могат ли котките да бъдат синоптици" [level=3]:
+  - link "Могат ли котките да бъдат синоптици":
+    - /url: https://dogsandcats.bg/kotki/mogat-li-kotkite-da-bydat-sinoptici
+- link:
+  - /url: https://dogsandcats.bg/kucheta/kakvo-oznachava-ako-kucheto-ni-povryshta-bistra-technost
+  - img
+- heading "Какво означава, ако кучето ни повръща бистра течност" [level=3]:
+  - link "Какво означава, ако кучето ни повръща бистра течност":
+    - /url: https://dogsandcats.bg/kucheta/kakvo-oznachava-ako-kucheto-ni-povryshta-bistra-technost
+- iframe
+- contentinfo:
+  - list:
+    - listitem:
+      - link "Abv.bg":
+        - /url: https://www.abv.bg/
+    - listitem:
+      - link "Vbox7.com":
+        - /url: https://www.vbox7.com/
+    - listitem:
+      - link "Gong.bg":
+        - /url: https://gong.bg/
+    - listitem:
+      - link "Ohnamama.bg":
+        - /url: https://ohnamama.bg/
+    - listitem:
+      - link "Grabo.bg":
+        - /url: https://grabo.bg/
+    - listitem:
+      - link "Edna.bg":
+        - /url: https://www.edna.bg/
+    - listitem:
+      - link "Vesti.bg":
+        - /url: https://www.vesti.bg/
+    - listitem:
+      - link "Nova.bg":
+        - /url: https://nova.bg/
+    - listitem:
+      - link "Carmarket.bg":
+        - /url: https://www.carmarket.bg/
+    - listitem:
+      - link "BISS.bg":
+        - /url: https://www.biss.bg/
+    - listitem:
+      - link "Pariteni.bg":
+        - /url: https://www.pariteni.bg/
+    - listitem:
+      - link "Dogs&Cats.bg":
+        - /url: https://dogsandcats.bg/
+    - listitem:
+      - link "Telegraph.bg":
+        - /url: https://telegraph.bg/
+    - listitem:
+      - link "Gbg.bg":
+        - /url: https://www.gbg.bg/
+  - list:
+    - listitem:
+      - link "За нас":
+        - /url: http://info.netinfocompany.bg/about-company
+    - listitem:
+      - link "За реклама":
+        - /url: http://www.netinfocompany.bg/media-kit/sinoptikbg-78
+    - listitem:
+      - link "Платени публикации":
+        - /url: https://www.sinoptik.bg/tags/2576/plateni-publikacii
+    - listitem:
+      - link "Портфолио":
+        - /url: http://info.netinfocompany.bg/portfolio
+    - listitem:
+      - link "Контакти":
+        - /url: https://www.netinfocompany.bg/contacts/?s=sinoptik
+    - listitem:
+      - link "Политика ЛД":
+        - /url: https://www.netinfocompany.bg/gdpr/
+    - listitem:
+      - link "Времето от Foreca":
+        - /url: http://foreca.com/
+    - listitem:
+      - link "Поверителност":
+        - /url: javascript:;
+    - listitem:
+      - link "Политика ЛД":
+        - /url: https://www.netinfocompany.bg/gdpr/
+    - listitem:
+      - link "Известия":
+        - /url: javascript:;
+  - link "Предимно слънчево Прогноза за времето на Вашия сайт Вземи тук":
+    - /url: https://www.sinoptik.bg/widgets
+    - img "Предимно слънчево"
+    - text: Прогноза за времето на Вашия сайт
+    - strong: Вземи тук
+  - link "Get it on Google Play":
+    - /url: https://play.google.com/store/apps/details?id=bg.sinoptik&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1
+    - img "Get it on Google Play"
+  - link "Download on the App Store":
+    - /url: https://apps.apple.com/bg/app/sinoptik/id824206602
+    - img "Download on the App Store"
+  - link "Explore it on AppGallery":
+    - /url: https://appgallery.cloud.huawei.com/marketshare/app/C101490465
+    - img "Explore it on AppGallery"
+  - link:
+    - /url: "#"
+  - link:
+    - /url: "#"
+  - text: © 1998-2025 Нет Инфо ЕАД.
+  - link "Всички права запазени":
+    - /url: http://www.netinfocompany.bg/privacy
+  - link "United Media":
+    - /url: https://unitedmedia.net/
+    - img "United Media"
+- iframe
+```
