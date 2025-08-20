@@ -114,7 +114,7 @@ jobs:
       if: always()
       with:
         name: merged-playwright-report
-        path: playwright-report/
+        path: playwright-report/ 
         retention-days: 30
 
     # GitHub Pages deployment (optional - uncomment when Pages is enabled)
