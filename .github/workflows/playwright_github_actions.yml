@@ -46,10 +46,16 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm install
+      # run: npm install
+      run: 
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
 
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps ${{ matrix.browser }}
+      run: npx playwright install --with-deps
 
     - name: Run Playwright tests
       run: |
