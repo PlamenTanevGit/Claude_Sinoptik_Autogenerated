@@ -1,0 +1,19 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="42.025887000000004">
+<testsuite name="sinoptik_test.spec.js" timestamp="2025-08-21T21:27:07.155Z" hostname="chromium" tests="3" failures="0" skipped="0" time="40.534" errors="0">
+<testcase name="Sinoptik Weather Forecast Tests › Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast" classname="sinoptik_test.spec.js" time="16.491">
+<system-out>
+<![CDATA[14-day weather forecast verified successfully
+]]>
+</system-out>
+</testcase>
+<testcase name="Sinoptik Weather Forecast Tests › Verify forecast navigation tabs work correctly" classname="sinoptik_test.spec.js" time="12.019">
+</testcase>
+<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 14-day forecast" classname="sinoptik_test.spec.js" time="12.024">
+<system-out>
+<![CDATA[Found 28 forecast days
+Found 33 temperature readings
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,44 +1,21 @@
 {
-  "name": "playwright-weather-tests",
-  "version": "1.0.0",
-  "description": "Playwright tests for Sinoptik weather forecast",
-  "scripts": {
-    "test": "npx playwright test",
-    "test:headed": "npx playwright test --headed",
-    "test:ui": "npx playwright test --ui",
-    "test:debug": "npx playwright test --debug",
-    
-    "test:chromium": "npx playwright test --project=chromium",
-    "test:firefox": "npx playwright test --project=firefox",
-    "test:webkit": "npx playwright test --project=webkit",
-    "test:mobile": "npx playwright test --project=mobile-chrome",
-    
-    "test:sinoptik": "npx playwright test sinoptik_test.spec.js",
-    "test:sinoptik:headed": "npx playwright test sinoptik_test.spec.js --headed",
-    
-    "test:ci": "npx playwright test --reporter=html,junit,github",
-    "test:smoke": "npx playwright test --grep=\"@smoke\"",
-    "test:regression": "npx playwright test --grep=\"@regression\"",
-    
-    "report:open": "npx playwright show-report",
-    "report:generate": "npx playwright show-report --host=0.0.0.0",
-    
-    "install:browsers": "npx playwright install",
-    "install:deps": "npx playwright install-deps",
-    
-    "lint:tests": "eslint tests/**/*.js",
-    "format:tests": "prettier --write tests/**/*.js",
-    
-    "precommit": "npm run lint:tests && npm run test:smoke",
-    "ci:install": "npm ci && npx playwright install --with-deps",
-    "ci:test": "npx playwright test --reporter=html,junit,github"
-  },
-  "devDependencies": {
+"name": "playwright-sinoptik-tests",
+"version": "1.0.0",
+"private": true,
+"description": "Playwright tests for Sinoptik weather forecast",
+"scripts": {
+"test": "playwright test",
+"test:headed": "playwright test --headed",
+"test:ui": "playwright test --ui",
+"report": "playwright show-report",
+"codegen": "playwright codegen"
+},
+"devDependencies": {
     "@playwright/test": "^1.40.0",
-    "eslint": "^8.0.0",
-    "prettier": "^3.0.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+    "eslint": "^8.57.1",
+    "prettier": "^3.6.2"
+},
+"engines": {
+"node": ">=18.0.0"
+}
 }

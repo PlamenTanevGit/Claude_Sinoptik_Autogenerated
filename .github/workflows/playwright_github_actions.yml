@@ -46,10 +46,16 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm ci
+      # run: npm install
+      run: 
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
 
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps ${{ matrix.browser }}
+      run: npx playwright install --with-deps
 
     - name: Run Playwright tests
       run: |
@@ -114,16 +120,17 @@ jobs:
       if: always()
       with:
         name: merged-playwright-report
-        path: playwright-report/
+        path: playwright-report/ 
         retention-days: 30
 
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main' && always()
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./playwright-report
-        destination_dir: test-reports
+    # GitHub Pages deployment (optional - uncomment when Pages is enabled)
+    # - name: Deploy to GitHub Pages
+    #   if: github.ref == 'refs/heads/main' && always()
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: ./playwright-report
+    #     destination_dir: test-reports
 
   # Notification job
   notify:
