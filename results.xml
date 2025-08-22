@@ -1,14 +1,56 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="42.025887000000004">
-<testsuite name="sinoptik_test.spec.js" timestamp="2025-08-21T21:27:07.155Z" hostname="chromium" tests="3" failures="0" skipped="0" time="40.534" errors="0">
-<testcase name="Sinoptik Weather Forecast Tests › Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast" classname="sinoptik_test.spec.js" time="16.491">
+<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="75.01919799999999">
+<testsuite name="sinoptik_test.spec.js" timestamp="2025-08-22T20:51:52.852Z" hostname="chromium" tests="3" failures="1" skipped="0" time="71.754" errors="0">
+<testcase name="Sinoptik Weather Forecast Tests › Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast" classname="sinoptik_test.spec.js" time="51.862">
+<failure message="sinoptik_test.spec.js:5:7 Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast" type="FAILURE">
+<![CDATA[  [chromium] › sinoptik_test.spec.js:5:7 › Sinoptik Weather Forecast Tests › Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast › Take screenshot of 14-day forecast 
+
+    Test timeout of 30000ms exceeded.
+
+    TimeoutError: page.screenshot: Timeout 30000ms exceeded.
+    Call log:
+      - taking page screenshot
+      - waiting for fonts to load...
+
+
+      80 |     // Optional: Take a screenshot for verification
+      81 |     await test.step('Take screenshot of 14-day forecast', async () => {
+    > 82 |       await page.screenshot({ 
+         |                  ^
+      83 |         path: 'varna-14-day-forecast.png',
+      84 |         fullPage: true 
+      85 |       });
+        at C:\Users\Plamen-63698\Desktop\Claude_Sinoptik_Autogenrated\tests\sinoptik_test.spec.js:82:18
+        at C:\Users\Plamen-63698\Desktop\Claude_Sinoptik_Autogenrated\tests\sinoptik_test.spec.js:81:16
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\sinoptik_test-Sinoptik-Wea-21bdd-ia-and-view-14-day-forecast-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\sinoptik_test-Sinoptik-Wea-21bdd-ia-and-view-14-day-forecast-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\sinoptik_test-Sinoptik-Wea-21bdd-ia-and-view-14-day-forecast-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\sinoptik_test-Sinoptik-Wea-21bdd-ia-and-view-14-day-forecast-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 <system-out>
 <![CDATA[14-day weather forecast verified successfully
+
+[[ATTACHMENT|test-results\sinoptik_test-Sinoptik-Wea-21bdd-ia-and-view-14-day-forecast-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\sinoptik_test-Sinoptik-Wea-21bdd-ia-and-view-14-day-forecast-chromium\error-context.md]]
+
+[[ATTACHMENT|test-results\sinoptik_test-Sinoptik-Wea-21bdd-ia-and-view-14-day-forecast-chromium\trace.zip]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sinoptik Weather Forecast Tests › Verify forecast navigation tabs work correctly" classname="sinoptik_test.spec.js" time="12.019">
+<testcase name="Sinoptik Weather Forecast Tests › Verify forecast navigation tabs work correctly" classname="sinoptik_test.spec.js" time="9.349">
 </testcase>
-<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 14-day forecast" classname="sinoptik_test.spec.js" time="12.024">
+<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 14-day forecast" classname="sinoptik_test.spec.js" time="10.543">
 <system-out>
 <![CDATA[Found 28 forecast days
 Found 33 temperature readings
