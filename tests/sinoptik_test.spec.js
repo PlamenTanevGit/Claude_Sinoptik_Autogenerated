@@ -72,7 +72,7 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
       
       // // Verify weather icons/conditions are present
       // const weatherConditions = page.locator('img[alt*="лънчево"], img[alt*="блачно"], img[alt*="дъжд"]');
-      // await expect(weatherConditions.first()).toBeVisible();
+      // await expect(weatherConditions.first()).toBeVisible();  
       
       console.log('14-day weather forecast verified successfully');
     });
