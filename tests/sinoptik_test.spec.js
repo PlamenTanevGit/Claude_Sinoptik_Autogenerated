@@ -211,5 +211,5 @@ test.afterEach(async ({ page }, testInfo) => {
       path: `test-failure-${testInfo.title.replace(/\s+/g, '-')}.png`,
       fullPage: true 
     });
-  }
+  } 
 });
