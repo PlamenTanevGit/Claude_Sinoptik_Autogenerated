@@ -78,12 +78,12 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
     });
 
     // Optional: Take a screenshot for verification
-    await test.step('Take screenshot of 14-day forecast', async () => {
-      await page.screenshot({ 
-        path: 'varna-14-day-forecast.png',
-        fullPage: true 
-      });
-    });
+    // await test.step('Take screenshot of 14-day forecast', async () => {
+    //   await page.screenshot({ 
+    //     path: 'varna-14-day-forecast.png',
+    //     fullPage: true 
+    //   });
+    // });
   });
 
   test('Verify forecast navigation tabs work correctly', async ({ page }) => {
