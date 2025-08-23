@@ -1,9 +1,13 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.036536">
-<testsuite name="sinoptik_test.spec.js" timestamp="2025-08-23T07:48:56.740Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.186" errors="0">
-<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 14-day forecast" classname="sinoptik_test.spec.js" time="14.186">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="12.417016000000004">
+<testsuite name="sinoptik_test.spec.js" timestamp="2025-08-23T08:11:52.326Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.634" errors="0">
+<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 14-day forecast" classname="sinoptik_test.spec.js" time="9.634">
 <system-out>
-<![CDATA[Found 28 forecast days
+<![CDATA[Waiting for consent button...
+Clicking consent button...
+Found 28 forecast days
 Found 33 temperature readings
+
+[[ATTACHMENT|test-results\sinoptik_test-Sinoptik-Wea-fb936-tructure-on-14-day-forecast-chromium\trace.zip]]
 ]]>
 </system-out>
 </testcase>

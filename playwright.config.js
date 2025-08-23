@@ -21,12 +21,17 @@ reporter: [
 
 
 use: {
-headless: true,
-screenshot: 'only-on-failure',
-video: 'retain-on-failure',
-trace: 'retain-on-failure',
-// If the target site blocks headless, uncomment a UA:
-// userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
+  headless: true,
+  screenshot: 'only-on-failure',
+  video: 'retain-on-failure',
+  trace: 'retain-on-failure',
+  // If the target site blocks headless, enhance UA and add headers
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+  extraHTTPHeaders: {
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Cache-Control': 'no-cache',
+  },
 },
 
 

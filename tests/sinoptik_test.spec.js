@@ -11,6 +11,9 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
       await expect(page).toHaveTitle(/Населени места в България, Европа - Sinoptik.bg/);
 
       // Consent
+      console.log('Waiting for consent button...');
+      await page.waitForSelector("button[aria-label='Давам съгласие']");
+      console.log('Clicking consent button...');
       await page.locator("button[aria-label='Давам съгласие']").click();
 
       // Ensure the search field is visible
@@ -90,7 +93,10 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
     // Navigate directly to Varna weather page
     await page.goto('https://www.sinoptik.bg/varna-bulgaria-100726050');
 
-          // Consent
+   // Consent
+      console.log('Waiting for consent button...');
+      await page.waitForSelector("button[aria-label='Давам съгласие']");
+      console.log('Clicking consent button...');
       await page.locator("button[aria-label='Давам съгласие']").click();
     
     // Test different forecast period tabs
@@ -126,7 +132,10 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
     await page.goto('https://www.sinoptik.bg/varna-bulgaria-100726050/14-days');
 
     // Consent
-    await page.locator("button[aria-label='Давам съгласие']").click();
+      console.log('Waiting for consent button...');
+      await page.waitForSelector("button[aria-label='Давам съгласие']");
+      console.log('Clicking consent button...');
+      await page.locator("button[aria-label='Давам съгласие']").click();
     
     await test.step('Verify forecast table structure', async () => {
       // Check table headers
