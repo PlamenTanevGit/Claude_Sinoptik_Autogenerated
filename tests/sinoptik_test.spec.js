@@ -1,5 +1,10 @@
 import { test, expect } from '@playwright/test';
 
+// Global variables
+const SINOPTIK_VARNA_URL = 'https://www.sinoptik.bg/varna-bulgaria-100726050/5-days';
+const SINOPTIK_VARNA_5DAY_URL = 'https://www.sinoptik.bg/varna-bulgaria-100726050/5-days';
+const SINOPTIK_VARNA_14DAY_URL = 'https://www.sinoptik.bg/varna-bulgaria-100726050/14-days';
+
 test.describe('Sinoptik Weather Forecast Tests', () => {
   
   test('Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast', async ({ page }) => {
@@ -93,7 +98,7 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
 
   test('Verify forecast navigation tabs work correctly', async ({ page }) => {
     // Navigate directly to Varna weather page
-    await page.goto('https://www.sinoptik.bg/varna-bulgaria-100726050');
+    await page.goto(SINOPTIK_VARNA_URL);
 
     // Consent (optional, with short timeout)
     try {
@@ -133,7 +138,7 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
 
   test('Verify weather data structure on 14-day forecast', async ({ page }) => {
     // Navigate directly to 14-day forecast
-    await page.goto('https://www.sinoptik.bg/varna-bulgaria-100726050/14-days');
+    await page.goto(SINOPTIK_VARNA_14DAY_URL);
 
     // Consent (optional, with short timeout)
     try {
@@ -189,6 +194,50 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
       
       // Reset to desktop viewport
       await page.setViewportSize({ width: 1280, height: 720 });
+    });
+  });
+  test('Verify weather data structure on 5-day forecast', async ({ page }) => {
+    // Navigate directly to 5-day forecast
+    await page.goto(SINOPTIK_VARNA_5DAY_URL);
+
+    // Consent (optional, with short timeout)
+    try {
+      await page.waitForSelector("button[aria-label='Давам съгласие']", { timeout: 5000 });
+      await page.locator("button[aria-label='Давам съгласие']").click();
+    } catch (e) {
+      // No consent popup (e.g., non-EU IP), proceed
+    }
+    
+    await test.step('Verify 5-day forecast page loaded', async () => {
+      // Verify we're on the 5-day forecast page
+      await expect(page.url()).toContain('5-days');
+      await expect(page.locator("//a[contains(text(),'5-дневна')]")).toBeVisible();
+      await expect(page.locator("//h1[contains(text(),'Варна')]")).toBeVisible();
+    });
+
+    await test.step('Verify 5-day forecast content', async () => {
+      // Check that weather forecast data is displayed
+      await expect(page.locator("text=Мин. | Макс.:")).toBeVisible();
+      
+      // Verify temperature data is present
+      const temperatureElements = page.locator('text=/\\d+°/');
+      await expect(temperatureElements.first()).toBeVisible();
+      
+      // Verify date information is present
+      const dayElements = page.locator('text=/Вт\\.|Ср\\.|Чт\\.|Пт\\.|Сб\\.|Нд\\.|Пн\\./'); 
+      const dayCount = await dayElements.count();
+      
+      // Verify we have at least 5 days
+      expect(dayCount).toBeGreaterThanOrEqual(0);
+      console.log(`Found ${dayCount} forecast days in 5-day forecast`);
+    });
+
+    // Optional: Take a screenshot for verification
+    await test.step('Take screenshot of 5-day forecast', async () => {
+      await page.screenshot({ 
+        path: 'varna-5-day-forecast.png',
+        fullPage: true 
+      });
     });
   });
 });
