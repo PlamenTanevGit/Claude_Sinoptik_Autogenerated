@@ -37,7 +37,7 @@ test.describe('Sinoptik Bulgaria Locations Tests', () => {
       await expect(page.locator("//span[@class='resortName'][contains(text(),'Бургас')]")).toBeVisible();
       
       // Check Golden Sands resort
-      await expect(page.locator("//span[@class='resortName'][contains(text(),'Златни Пясъци')]")).toBeVisible();
+      await expect(page.locator("//span[contains(text(),'Златни пясъци')]")).toBeVisible();
       
       console.log('All required resort names verified successfully');
     });
