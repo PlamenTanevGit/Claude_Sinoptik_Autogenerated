@@ -1,14 +1,16 @@
 import { test, expect } from '@playwright/test';
+import { handleConsent } from './utils/consent-handler.js';
 
 // Global variables
 const SINOPTIK_VARNA_BASE_URL = 'https://www.sinoptik.bg/varna-bulgaria-100726050';
+const SINOPTIK_LOCATIONS_URL = 'https://www.sinoptik.bg/locations/europe/bulgaria';
 
 test.describe('Sinoptik Weather Forecast Tests', () => {
 
   test('Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast', async ({ page }) => {
     // Navigate to the Sinoptik.bg website
     await test.step('Navigate to Sinoptik.bg', async () => {
-      await page.goto('https://www.sinoptik.bg/locations/europe/bulgaria');
+      await page.goto(SINOPTIK_LOCATIONS_URL);
 
       // Verify the page loaded correctly
       await expect(page).toHaveTitle(/Населени места в България, Европа - Sinoptik.bg/);
@@ -221,16 +223,6 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
 });
 
 // Helper function for additional test utilities
-
-// Consent popup handler
-async function handleConsent(page) {
-  try {
-    await page.waitForSelector("button[aria-label='Давам съгласие']", { timeout: 5000 });
-    await page.locator("button[aria-label='Давам съгласие']").click();
-  } catch (e) {
-    // No consent popup (e.g., non-EU IP), proceed
-  }
-}
 
 test.beforeEach(async ({ page }) => {
   // Set longer timeout for weather sites (they can be slow)
