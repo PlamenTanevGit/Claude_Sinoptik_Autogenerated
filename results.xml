@@ -1,6 +1,21 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.97927999999991">
-<testsuite name="sinoptik_test.spec.js" timestamp="2025-08-25T20:51:01.719Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.718" errors="0">
-<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 5-day forecast" classname="sinoptik_test.spec.js" time="9.718">
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="49.993289000000004">
+<testsuite name="sinoptik_test.spec.js" timestamp="2025-08-25T21:01:28.037Z" hostname="chromium" tests="4" failures="0" skipped="0" time="45.51" errors="0">
+<testcase name="Sinoptik Weather Forecast Tests › Navigate to Sinoptik.bg, search for Varna Bulgaria, and view 14-day forecast" classname="sinoptik_test.spec.js" time="15.093">
+<system-out>
+<![CDATA[14-day weather forecast verified successfully
+]]>
+</system-out>
+</testcase>
+<testcase name="Sinoptik Weather Forecast Tests › Verify forecast navigation tabs work correctly" classname="sinoptik_test.spec.js" time="10.935">
+</testcase>
+<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 14-day forecast" classname="sinoptik_test.spec.js" time="13.623">
+<system-out>
+<![CDATA[Found 28 forecast days
+Found 34 temperature readings
+]]>
+</system-out>
+</testcase>
+<testcase name="Sinoptik Weather Forecast Tests › Verify weather data structure on 5-day forecast" classname="sinoptik_test.spec.js" time="5.859">
 <system-out>
 <![CDATA[Found 0 forecast days in 5-day forecast
 ]]>
