@@ -10,8 +10,13 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
       // Verify the page loaded correctly
       await expect(page).toHaveTitle(/Населени места в България, Европа - Sinoptik.bg/);
 
-      // Consent
-      await page.locator("button[aria-label='Давам съгласие']").click();
+      // Consent (optional, with short timeout)
+      try {
+        await page.waitForSelector("button[aria-label='Давам съгласие']", { timeout: 5000 });
+        await page.locator("button[aria-label='Давам съгласие']").click();
+      } catch (e) {
+        // No consent popup (e.g., non-EU IP), proceed
+      }
 
       // Ensure the search field is visible
       await expect(page.locator("#searchField")).toBeVisible();
@@ -72,8 +77,8 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
       
       // // Verify weather icons/conditions are present
       // const weatherConditions = page.locator('img[alt*="лънчево"], img[alt*="блачно"], img[alt*="дъжд"]');
-      // await expect(weatherConditions.first()).toBeVisible();
-      
+      // await expect(weatherConditions.first()).toBeVisible();  
+      // change 1
       console.log('14-day weather forecast verified successfully');
     });
 
@@ -90,8 +95,13 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
     // Navigate directly to Varna weather page
     await page.goto('https://www.sinoptik.bg/varna-bulgaria-100726050');
 
-          // Consent
+    // Consent (optional, with short timeout)
+    try {
+      await page.waitForSelector("button[aria-label='Давам съгласие']", { timeout: 5000 });
       await page.locator("button[aria-label='Давам съгласие']").click();
+    } catch (e) {
+      // No consent popup (e.g., non-EU IP), proceed
+    }
     
     // Test different forecast period tabs
     const forecastTabs = [
@@ -105,9 +115,9 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
     for (const tab of forecastTabs) {
       await test.step(`Test ${tab.text} tab`, async () => {
         // const tabLink = page.locator(`a:has-text("${tab.text}")`);   //npx playwright test --ui
-        const tabLink = page.locator(`//a[contains(text(),"${tab.text}")]`);
+        const tabLink = page.locator(`//a[contains(text(),"${tab.text}")]`); 
         await expect(tabLink).toBeVisible();
-        await tabLink.click();
+        await tabLink.click();  
         
         // Wait for navigation
         // await page.waitForLoadState('networkidle');
@@ -125,8 +135,13 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
     // Navigate directly to 14-day forecast
     await page.goto('https://www.sinoptik.bg/varna-bulgaria-100726050/14-days');
 
-    // Consent
-    await page.locator("button[aria-label='Давам съгласие']").click();
+    // Consent (optional, with short timeout)
+    try {
+      await page.waitForSelector("button[aria-label='Давам съгласие']", { timeout: 5000 });
+      await page.locator("button[aria-label='Давам съгласие']").click();
+    } catch (e) {
+      // No consent popup (e.g., non-EU IP), proceed
+    }
     
     await test.step('Verify forecast table structure', async () => {
       // Check table headers
@@ -196,5 +211,5 @@ test.afterEach(async ({ page }, testInfo) => {
       path: `test-failure-${testInfo.title.replace(/\s+/g, '-')}.png`,
       fullPage: true 
     });
-  }
+  } 
 });
