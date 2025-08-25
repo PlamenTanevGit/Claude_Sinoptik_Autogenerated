@@ -117,7 +117,7 @@ test.describe('Sinoptik Weather Forecast Tests', () => {
         // const tabLink = page.locator(`a:has-text("${tab.text}")`);   //npx playwright test --ui
         const tabLink = page.locator(`//a[contains(text(),"${tab.text}")]`); 
         await expect(tabLink).toBeVisible();
-        await tabLink.click();
+        await tabLink.click();  
         
         // Wait for navigation
         // await page.waitForLoadState('networkidle');
