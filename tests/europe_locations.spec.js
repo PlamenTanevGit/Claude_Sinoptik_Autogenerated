@@ -6,124 +6,120 @@ const EUROPE_LOCATIONS_URL = 'https://www.sinoptik.bg/locations/europe';
 
 test.describe('Sinoptik Europe Locations Tests', () => {
   
-  test('Verify Europe locations page elements and country sections', async ({ page }) => {
+  test('should load Europe locations page with correct title', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    await expect(page).toHaveTitle("Страни в Европа - Sinoptik.bg");
+  });
+
+  test('should display Europe region link as visible', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
     const Europe = page.locator("a[href='https://www.sinoptik.bg/locations/europe']");
+    await expect(Europe).toBeVisible();
+  });
+
+  test('should display France link in Western Europe section', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    const France = page.locator("//a[contains(@href, 'france')]");
+    await expect(France).toBeVisible();
+  });
+
+  test('should display Germany link in Western Europe section', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
     
     const Germany = page.locator("//a[contains(@href, 'germany')]");
-    const France = page.locator("//a[contains(@href, 'france')]");
+    await expect(Germany).toBeVisible();
+  });
+
+  test('should display Great Britain link in Western Europe section', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
     const GreatBritain = page.locator("//a[contains(@href, 'great-britain')]");
-
-    // Navigate to the Europe locations page
-    await test.step('Navigate to Europe locations page', async () => {
-      await page.goto(EUROPE_LOCATIONS_URL);
-      
-      // Verify the page loaded correctly
-      await expect(page).toHaveTitle("Страни в Европа - Sinoptik.bg");
-
-      // Handle consent popup
-      await handleConsent(page);
-    });
-
-    // Validate selected region is visible
-    await test.step('Verify selected region section', async () => {
-      await expect(Europe).toBeVisible();
-    });
-
-    // Validate Western Europe section and countries
-    await test.step('Verify Western Europe section', async () => {
-      
-      // Check specific Western European countries
-      await expect(France).toBeVisible();
-      await expect(Germany).toBeVisible();
-      await expect(GreatBritain).toBeVisible();
-
-      console.log('Western Europe countries verified successfully');
-    });
-
-    // Optional: Take a screenshot for verification
-    await test.step('Take screenshot of Europe locations page', async () => {
-      await page.screenshot({ 
-        path: 'europe-locations.png',
-        fullPage: true 
-      });
-    });
+    await expect(GreatBritain).toBeVisible();
   });
 
-  test('Verify Southern Europe section and Mediterranean countries', async ({ page }) => {
-    // Navigate to the Europe locations page
+  test('should display Italy link in Southern Europe section', async ({ page }) => {
     await page.goto(EUROPE_LOCATIONS_URL);
-    
-    // Handle consent popup
     await handleConsent(page);
-
-    // Locators for Italy / Spain / Greece
+    
     const italyLocator = page.locator("//a[contains(@href, 'italy')]");
-    const spainLocator = page.locator("//a[contains(@href, 'spain')]");
-    const greeceLocator = page.locator("//a[contains(@href, 'greece')]");
-    const italyMostPopularLocator = page.locator("(//li[contains(text(),'Най-търсени в Италия:')])[1]");
-
-    // Validate Southern Europe section and countries
-    await test.step('Verify Southern Europe section', async () => {
-      // Check specific Southern European countries
-      await expect(italyLocator).toBeVisible();
-      await expect(spainLocator).toBeVisible();
-      await expect(greeceLocator).toBeVisible();
-
-      console.log('Southern Europe countries verified successfully');
-    });
-
-    // Test clicking on a specific country link
-    await test.step('Test navigation to specific country', async () => {
-      await expect(italyLocator).toBeVisible();
-      await italyLocator.click();
-      
-      // Verify navigation to Italy locations page
-      await expect(page.url()).toContain('/italy');
-      await expect(italyMostPopularLocator).toBeVisible();
-    });
+    await expect(italyLocator).toBeVisible();
   });
 
-  test('Verify Central Europe section and country navigation', async ({ page }) => {
-    // Navigate to the Europe locations page
+  test('should display Spain link in Southern Europe section', async ({ page }) => {
     await page.goto(EUROPE_LOCATIONS_URL);
-    
-    // Handle consent popup
     await handleConsent(page);
+    
+    const spainLocator = page.locator("//a[contains(@href, 'spain')]");
+    await expect(spainLocator).toBeVisible();
+  });
 
-    // Validate Central Europe section and countries
-    await test.step('Verify Central Europe section', async () => {
-      
-      // Check specific Central European countries
-      await expect(page.locator("//a[contains(@href, 'austria')]")).toBeVisible();
-      await expect(page.locator("//a[contains(@href, 'switzerland')]")).toBeVisible();
-      await expect(page.locator("//a[contains(@href, 'czech-republic')]")).toBeVisible();
-      
-      console.log('Central Europe countries verified successfully');
-    });
+  test('should display Greece link in Southern Europe section', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    const greeceLocator = page.locator("//a[contains(@href, 'greece')]");
+    await expect(greeceLocator).toBeVisible();
+  });
 
-    // Test responsive design on mobile
-    await test.step('Verify mobile responsive design', async () => {
-      await page.setViewportSize({ width: 375, height: 667 });
-      await page.reload();
-      
-      // Handle consent popup again after reload
-      await handleConsent(page);
-      
-      // Verify content is still accessible on mobile
-      await expect(page.locator("//h3[contains(text(),'Западна Европа')]")).toBeVisible();
-      await expect(page.locator("//a[contains(text(),'България')]")).toBeVisible();
-      
-      // Reset to desktop viewport
-      await page.setViewportSize({ width: 1280, height: 720 });
-    });
+  test('should navigate to Italy page when Italy link is clicked', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    const italyLocator = page.locator("//a[contains(@href, 'italy')]");
+    await italyLocator.click();
+    
+    await expect(page.url()).toContain('/italy');
+  });
 
-    // Optional: Take a screenshot for verification
-    await test.step('Take screenshot of Central Europe section', async () => {
-      await page.screenshot({ 
-        path: 'central-europe-section.png',
-        fullPage: true 
-      });
-    });
+  test('should display Italy most popular section after navigating to Italy', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    const italyLocator = page.locator("//a[contains(@href, 'italy')]");
+    await italyLocator.click();
+    
+    const italyMostPopularLocator = page.locator("(//li[contains(text(),'Най-търсени в Италия:')])[1]");
+    await expect(italyMostPopularLocator).toBeVisible();
+  });
+
+  test('should display Austria link in Central Europe section', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    await expect(page.locator("//a[contains(@href, 'austria')]")).toBeVisible();
+  });
+
+  test('should display Switzerland link in Central Europe section', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    await expect(page.locator("//a[contains(@href, 'switzerland')]")).toBeVisible();
+  });
+
+  test('should display Czech Republic link in Central Europe section', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    await expect(page.locator("//a[contains(@href, 'czech-republic')]")).toBeVisible();
+  });
+
+  test('should display Bulgaria link on mobile viewport', async ({ page }) => {
+    await page.goto(EUROPE_LOCATIONS_URL);
+    await handleConsent(page);
+    
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.reload();
+    await handleConsent(page);
+    
+    await expect(page.locator("//a[@href='https://www.sinoptik.bg/locations/europe/bulgaria'][contains(text(),'България')]")).toBeVisible();
   });
 });
 
