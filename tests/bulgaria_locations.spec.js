@@ -16,6 +16,7 @@ test.describe('Sinoptik Bulgaria Locations Tests', () => {
 
       // Handle consent popup
       await handleConsent(page);
+      console.log('Navigated to Bulgaria locations page and handled consent');      
     });
 
     // Validate selected region is visible
